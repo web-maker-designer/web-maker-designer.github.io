@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Global TV | Web Maker Designer</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Segoe UI', 'Courier New', monospace;
+            min-height: 100vh;
+            color: #eee;
+        }
+
+        /* Header */
+        .tv-header {
+            background: #0f0f0f;
+            padding: 0.8rem 2rem;
+            border-bottom: 1px solid #00ffff22;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-btn {
+            background: #00ffff11;
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            font-family: monospace;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 0.3rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-btn:hover {
+            background: #00ffff22;
+            box-shadow: 0 0 10px #00ffff66;
+        }
+
+        .page-title {
+            color: #00ffff;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .stats {
+            font-size: 0.7rem;
+            color: #ff3366;
+        }
+
+        /* Main container */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        /* Filters */
+        .filters {
+            background: #111;
+            border-radius: 20px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+            border: 1px solid #2a2a2a;
+        }
+
+        .filter-group {
+            background: #1a1a1a;
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+        }
+
+        .filter-group label {
+            font-size: 0.7rem;
+            color: #888;
+            margin-right: 0.5rem;
+        }
+
+        select, .search-box {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            color: #00ffff;
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            font-family: monospace;
+            cursor: pointer;
+        }
+
+        .search-box {
+            width: 200px;
+        }
+
+        /* Channel grid */
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .channel-card {
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .channel-card:hover {
+            border-color: #00ffff;
+            background: #151515;
+            transform: translateY(-3px);
+        }
+
+        .channel-logo {
+            width: 50px;
+            height: 50px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .channel-logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .channel-info {
+            flex: 1;
+        }
+
+        .channel-name {
+            font-weight: bold;
+            color: #00ffff;
+            font-size: 1rem;
+        }
+
+        .channel-country {
+            font-size: 0.7rem;
+            color: #888;
+            margin-top: 0.2rem;
+        }
+
+        .channel-category {
+            font-size: 0.65rem;
+            color: #ff3366;
+            margin-top: 0.2rem;
+        }
+
+        /* Player modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .player-container {
+            width: 90%;
+            max-width: 1200px;
+            background: #0a0a0a;
+            border-radius: 20px;
+            border: 1px solid #00ffff;
+            overflow: hidden;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            background: #111;
+            border-bottom: 1px solid #333;
+        }
+
+        .player-channel-name {
+            color: #00ffff;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            background: #ff3366;
+            border: none;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .iframe-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #00ffff;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+            .filters { flex-direction: column; align-items: stretch; }
+            .search-box { width: 100%; }
+            .channels-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="tv-header">
+    <a href="https://web-maker-designer.github.io" class="logo-btn">
+        📺 WEB MAKER
+    </a>
+    <div class="page-title">
+        🌍 GLOBAL TV — FREE LIVE WORLD TV
+    </div>
+    <div class="stats" id="stats">Loading channels...</div>
+</div>
+
+<div class="main-container">
+    <div class="filters">
+        <div class="filter-group">
+            <label>🌍 Country</label>
+            <select id="countryFilter">
+                <option value="all">All Countries</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>📺 Category</label>
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>🔍 Search</label>
+            <input type="text" id="searchInput" class="search-box" placeholder="Channel name...">
+        </div>
+    </div>
+
+    <div id="channelsGrid" class="channels-grid">
+        <div class="loading">📡 Loading channels from IPTV-org API...</div>
+    </div>
+</div>
+
+<!-- Player Modal -->
+<div id="playerModal" class="modal">
+    <div class="player-container">
+        <div class="player-header">
+            <span class="player-channel-name" id="modalChannelName">Channel Name</span>
+            <button class="close-btn" onclick="closeModal()">✕ Close</button>
+        </div>
+        <div class="iframe-container">
+            <iframe id="streamIframe" src="about:blank" allowfullscreen></iframe>
+        </div>
+        <div style="padding:0.8rem; font-size:0.7rem; color:#666; text-align:center;">
+            ⚡ Streams provided by IPTV-org | Some streams may require external players
+        </div>
+    </div>
+</div>
+
+<script>
+    // API endpoints
+    const API_BASE = 'https://iptv-org.github.io/api';
+    let allChannels = [];
+    let countriesMap = new Map();
+    let categoriesSet = new Set();
+
+    // DOM elements
+    const channelsGrid = document.getElementById('channelsGrid');
+    const countryFilter = document.getElementById('countryFilter');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const searchInput = document.getElementById('searchInput');
+    const statsSpan = document.getElementById('stats');
+
+    // Fetch channels
+    async function fetchChannels() {
+        try {
+            const response = await fetch(`${API_BASE}/channels.json`);
+            allChannels = await response.json();
+            
+            // Fetch countries for mapping
+            const countriesRes = await fetch(`${API_BASE}/countries.json`);
+            const countries = await countriesRes.json();
+            countries.forEach(c => countriesMap.set(c.code, c.name));
+            
+            // Build unique categories
+            allChannels.forEach(ch => {
+                if (ch.categories) {
+                    ch.categories.forEach(cat => categoriesSet.add(cat));
+                }
+            });
+            
+            populateFilters();
+            renderChannels();
+            statsSpan.innerText = `📡 ${allChannels.length} channels`;
+        } catch (error) {
+            console.error('Error fetching channels:', error);
+            channelsGrid.innerHTML = '<div class="no-results">❌ Error loading channels. Please refresh.</div>';
+            statsSpan.innerText = '⚠️ Error loading';
+        }
+    }
+    
+    function populateFilters() {
+        // Country dropdown
+        const countries = new Map();
+        allChannels.forEach(ch => {
+            if (ch.country && !countries.has(ch.country)) {
+                const countryName = countriesMap.get(ch.country) || ch.country;
+                countries.set(ch.country, countryName);
+            }
+        });
+        const sortedCountries = Array.from(countries.entries()).sort((a,b) => a[1].localeCompare(b[1]));
+        sortedCountries.forEach(([code, name]) => {
+            const option = document.createElement('option');
+            option.value = code;
+            option.textContent = `${getFlagEmoji(code)} ${name}`;
+            countryFilter.appendChild(option);
+        });
+        
+        // Category dropdown
+        const sortedCategories = Array.from(categoriesSet).sort();
+        sortedCategories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat;
+            option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+            categoryFilter.appendChild(option);
+        });
+    }
+    
+    function getFlagEmoji(countryCode) {
+        const codePoints = countryCode.toUpperCase().split('').map(char => 127397 + char.charCodeAt());
+        return String.fromCodePoint(...codePoints);
+    }
+    
+    function renderChannels() {
+        const country = countryFilter.value;
+        const category = categoryFilter.value;
+        const search = searchInput.value.toLowerCase();
+        
+        let filtered = allChannels.filter(ch => {
+            if (country !== 'all' && ch.country !== country) return false;
+            if (category !== 'all' && (!ch.categories || !ch.categories.includes(category))) return false;
+            if (search && !ch.name.toLowerCase().includes(search)) return false;
+            return true;
+        });
+        
+        // Limit to 200 for performance
+        filtered = filtered.slice(0, 200);
+        
+        if (filtered.length === 0) {
+            channelsGrid.innerHTML = '<div class="no-results">📺 No channels found. Try different filters.</div>';
+            statsSpan.innerText = `0 channels`;
+            return;
+        }
+        
+        statsSpan.innerText = `📺 ${filtered.length} channels`;
+        
+        channelsGrid.innerHTML = filtered.map(ch => {
+            const countryName = countriesMap.get(ch.country) || ch.country;
+            const flag = getFlagEmoji(ch.country || '');
+            const categoriesDisplay = ch.categories ? ch.categories.slice(0,2).join(', ') : '';
+            const logoUrl = `https://iptv-org.github.io/api/logos/${ch.id}.png`;
+            
+            return `
+                <div class="channel-card" onclick="playChannel('${ch.id}', '${ch.name.replace(/'/g, "\\'")}', '${countryName}')">
+                    <div class="channel-logo">
+                        <img src="${logoUrl}" onerror="this.style.display='none'; this.parentElement.innerHTML='📺'" alt="logo">
+                    </div>
+                    <div class="channel-info">
+                        <div class="channel-name">${ch.name}</div>
+                        <div class="channel-country">${flag} ${countryName}</div>
+                        <div class="channel-category">${categoriesDisplay || 'General'}</div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+    
+    // Get stream URL for channel
+    async function getStreamUrl(channelId) {
+        try {
+            const response = await fetch(`${API_BASE}/streams.json`);
+            const streams = await response.json();
+            const stream = streams.find(s => s.channel === channelId);
+            return stream ? stream.url : null;
+        } catch (e) {
+            console.error('Stream fetch error:', e);
+            return null;
+        }
+    }
+    
+    async function playChannel(channelId, channelName, countryName) {
+        const modal = document.getElementById('playerModal');
+        const modalTitle = document.getElementById('modalChannelName');
+        const iframe = document.getElementById('streamIframe');
+        
+        modalTitle.innerText = `${channelName} (${countryName})`;
+        iframe.src = 'about:blank';
+        modal.classList.add('active');
+        
+        // Show loading in iframe area
+        const container = document.querySelector('.iframe-container');
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'loading';
+        loadingDiv.innerText = '🔍 Finding stream URL...';
+        loadingDiv.style.position = 'absolute';
+        loadingDiv.style.top = '50%';
+        loadingDiv.style.left = '50%';
+        loadingDiv.style.transform = 'translate(-50%, -50%)';
+        loadingDiv.style.zIndex = '10';
+        container.appendChild(loadingDiv);
+        
+        const streamUrl = await getStreamUrl(channelId);
+        
+        if (streamUrl) {
+            // Many streams require a specific embed approach or external player
+            // For now, try to load in iframe - note: many streams are .m3u8 which won't play directly in iframe
+            iframe.src = streamUrl;
+            loadingDiv.innerText = '🎬 Loading stream... (may require external player for .m3u8)';
+            setTimeout(() => loadingDiv.remove(), 3000);
+        } else {
+            loadingDiv.innerText = '❌ No stream URL found. Check channel on IPTV-org.';
+            setTimeout(() => loadingDiv.remove(), 3000);
+        }
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById('playerModal');
+        const iframe = document.getElementById('streamIframe');
+        iframe.src = 'about:blank';
+        modal.classList.remove('active');
+    }
+    
+    // Event listeners
+    countryFilter.addEventListener('change', renderChannels);
+    categoryFilter.addEventListener('change', renderChannels);
+    searchInput.addEventListener('input', renderChannels);
+    
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+    
+    // Initialize
+    fetchChannels();
+</script>
+</body>
+</html>
