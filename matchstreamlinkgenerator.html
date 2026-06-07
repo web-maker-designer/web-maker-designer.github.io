@@ -828,14 +828,14 @@
                 }
                 
                 // Generate match links
-                const subdomain = 'xyz' + cleanDomain.replace(/\./g, '-');
+                const subdomain = '000008' + cleanDomain.replace(/\./g, '-');
                 let html = '';
                 
                 console.log(`Found ${matches.length} matches`); // Debug log
                 
                 matches.forEach(match => {
                     // Use id field for match ID
-                    let streamUrl = `https://${subdomain}.goalz.zip/?m=${match.id}&lang=${streamLang}`;
+                    let streamUrl = `https://${subdomain}.mov/?m=${match.id}&lang=${streamLang}`;
                     if (websiteName) {
                         streamUrl += `&domain_name=${encodeURIComponent(websiteName)}`;
                     }
