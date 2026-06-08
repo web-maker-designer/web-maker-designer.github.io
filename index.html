@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Web Maker Designer</title>
+  <title>Web Maker & Designer</title>
   <link rel="icon" type="image/svg+xml" href="https://web-maker-designer.github.io/favicon.svg"/>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
   <style>
@@ -854,15 +854,15 @@
 
   <footer>
     <span class="footer-left">© 2026 WEB-MAKER-DESIGNER — ALL RIGHTS RESERVED</span>
-    <span class="footer-right">BUILT WITH <span></span> PASSION & CODE</span>
+    <span class="footer-right">BUILT WITH PASSION & CODE</span>
   </footer>
 
   <script>
-     ── Pages: auto-fetch from GitHub + hardcoded fallback ──
+    // ── Pages: auto-fetch from GitHub + hardcoded fallback ──
     const GITHUB_USER = 'web-maker-designer';
     const SKIP_REPOS  = [GITHUB_USER + '.github.io'];
 
-     Hardcoded pages — always shown even if API fails
+    // Hardcoded pages — always shown even if API fails
     const HARDCODED_PAGES = [
       { name: 'global-tv', title: 'Global TV', url: 'https://web-maker-designer.github.io/global-tv/index.html', description: 'Live sports streaming & TV channels' }
     ];
@@ -885,9 +885,9 @@
         card.className = 'page-card';
         card.style.animationDelay = (idx * 80) + 'ms';
         card.innerHTML = `
-          <div class="page-card-label">// PAGE ${String(idx + 1).padStart(2,'0')}</div>
+          <div class="page-card-label">PAGE ${String(idx + 1).padStart(2,'0')}</div>
           <div class="page-card-title">${escHtml(page.title)}</div>
-          <div class="page-card-desc">${escHtml(page.description || '// no description')}</div>
+          <div class="page-card-desc">${escHtml(page.description || 'No description')}</div>
           <div class="page-card-url">${escHtml(page.url)}</div>
           <div class="page-card-footer">
             ${page.updated ? `<span class="page-card-date">Updated ${page.updated}</span>` : '<span></span>'}
@@ -902,7 +902,7 @@
       const grid   = document.getElementById('pagesGrid');
       const status = document.getElementById('pagesStatus');
 
-      status.innerHTML = '<span class="pages-loading">// FETCHING REPOS...</span>';
+      status.innerHTML = '<span class="pages-loading">FETCHING REPOS...</span>';
 
       // Always render hardcoded pages immediately
       renderCards(HARDCODED_PAGES);
@@ -920,7 +920,7 @@
           .map(r => ({
             name: r.name,
             title: formatName(r.name),
-            description: r.description || '// no description',
+            description: r.description || 'No description',
             url: `https://${GITHUB_USER}.github.io/${r.name}/`,
             updated: new Date(r.updated_at).toLocaleDateString('en-GB', { year:'numeric', month:'short' })
           }));
