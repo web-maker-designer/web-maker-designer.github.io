@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Web Maker Designer</title>
+  <title>Web Maker & Designer</title>
+  <link rel="icon" type="image/svg+xml" href="https://web-maker-designer.github.io/favicon.svg"/>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
     :root {
       --bg: #0a0a0f;
@@ -536,6 +535,105 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ── Pages ── */
+    #pages { padding-top: 120px; padding-bottom: 120px; }
+
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .page-card {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      animation: fadeUp 0.4s forwards;
+    }
+    .page-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent3);
+    }
+    .page-card:hover { border-color: var(--accent3); transform: translateY(-3px); }
+
+    .page-card-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--accent3);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .page-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
+    .page-card-url {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      word-break: break-all;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+    .page-visit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--accent3);
+      color: var(--accent3);
+      padding: 8px 16px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .page-visit-btn:hover { background: var(--accent3); color: var(--bg); }
+
+    .page-card-desc {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-family: 'Share Tech Mono', monospace;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .page-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+    }
+    .page-card-date {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .pages-loading {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      animation: blink 1s step-end infinite;
+    }
+    .pages-empty {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+    }
+
     /* ── Responsive ── */
     @media (max-width: 720px) {
       nav { padding: 16px 24px; }
@@ -545,6 +643,7 @@
       .contact-inner { flex-direction: column; padding: 40px 28px; text-align: center; }
       footer { flex-direction: column; gap: 8px; text-align: center; }
       .corner { display: none; }
+      .pages-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -557,18 +656,28 @@
   <div class="corner br"></div>
 
   <nav>
-    <span class="nav-logo">WEB MAKER DESIGNER</span>
+    <a href="#hero" style="display:flex;align-items:center;text-decoration:none;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40" style="filter:drop-shadow(0 0 8px rgba(0,255,224,0.45));">
+        <rect width="100" height="100" rx="20" fill="#0a0a0a"/>
+        <path d="M30 30 L70 30 L70 35 L35 35 L35 65 L70 65 L70 70 L30 70 Z" fill="#00ffff" opacity="0.9"/>
+        <path d="M50 45 L62 50 L50 55 L50 45Z" fill="#0a0a0a"/>
+        <path d="M45 40 L35 50 L45 60" stroke="#00ffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M55 40 L65 50 L55 60" stroke="#00ffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="48" y1="42" x2="52" y2="58" stroke="#ff3366" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#journey">Journey</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#pages">Pages</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <div id="hero">
-    <p class="hero-tag">Portfolio &amp; About</p>
+    <p class="hero-tag">// Portfolio &amp; About</p>
     <h1 class="hero-title">
       I build<br>
       <span class="cyan">websites.</span><br>
@@ -632,7 +741,7 @@
 
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-year">2020 — THE BEGINNING</div>
+        <div class="tl-year">// 2020 — THE BEGINNING</div>
         <div class="tl-title">First Lines of Code</div>
         <div class="tl-desc">
           Started tinkering with HTML and CSS out of pure curiosity. Built my first webpage — a messy, lovable experiment that sparked everything.
@@ -641,7 +750,7 @@
 
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-year">2021 — GOING DEEPER</div>
+        <div class="tl-year">// 2021 — GOING DEEPER</div>
         <div class="tl-title">Learning Design Systems</div>
         <div class="tl-desc">
           Moved beyond static pages into JavaScript, responsive design, and UI/UX principles. Started understanding how the web is actually experienced.
@@ -650,7 +759,7 @@
 
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-year">2022 — THE OTHER SIDE</div>
+        <div class="tl-year">// 2022 — THE OTHER SIDE</div>
         <div class="tl-title">Exploring Software Internals</div>
         <div class="tl-desc">
           Got fascinated with how apps and games work under the hood. Started writing scripts, exploring memory, and building my first executors and tools.
@@ -659,7 +768,7 @@
 
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-year">2023 — LEVELLING UP</div>
+        <div class="tl-year">// 2023 — LEVELLING UP</div>
         <div class="tl-title">Real Clients, Real Projects</div>
         <div class="tl-desc">
           Started taking on web design commissions. Built websites for others while simultaneously developing a reputation in the executor/hack community.
@@ -668,7 +777,7 @@
 
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-year">NOW — ONGOING</div>
+        <div class="tl-year">// NOW — ONGOING</div>
         <div class="tl-title">Building &amp; Breaking<span class="blink">_</span></div>
         <div class="tl-desc">
           Continuously pushing both crafts forward. Designing sharper, building faster, and engineering tools that do what others say can't be done.
@@ -714,10 +823,21 @@
     </div>
   </section>
 
+  <!-- PAGES -->
+  <section id="pages">
+    <div class="sec-header">
+      <span class="sec-number">04</span>
+      <h2 class="sec-title">My Pages</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="pages-status" id="pagesStatus"></div>
+    <div class="pages-grid" id="pagesGrid"></div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="sec-header">
-      <span class="sec-number">04</span>
+      <span class="sec-number">05</span>
       <h2 class="sec-title">Get In Touch</h2>
       <span class="sec-line"></span>
     </div>
@@ -733,23 +853,99 @@
   </section>
 
   <footer>
-    <span class="footer-left">© 2026 WEB MAKER DESIGNER — ALL RIGHTS RESERVED</span>
-    <span class="footer-right">BUILT WITH <span></span> PASSION & CODE</span>
+    <span class="footer-left">© 2026 WEB-MAKER-DESIGNER — ALL RIGHTS RESERVED</span>
+    <span class="footer-right">BUILT WITH <span>//</span> PASSION & CODE</span>
   </footer>
 
   <script>
-    // Intersection Observer for timeline items
+    // ── Pages: auto-fetch from GitHub + hardcoded fallback ──
+    const GITHUB_USER = 'web-maker-designer';
+    const SKIP_REPOS  = [GITHUB_USER + '.github.io'];
+
+    // Hardcoded pages — always shown even if API fails
+    const HARDCODED_PAGES = [
+      { name: 'global-tv', title: 'Global TV', url: 'https://web-maker-designer.github.io/global-tv/index.html', description: 'Live sports streaming & TV channels' }
+    ];
+
+    function escHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function formatName(repoName) {
+      return repoName
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function renderCards(pages) {
+      const grid = document.getElementById('pagesGrid');
+      grid.innerHTML = '';
+      pages.forEach((page, idx) => {
+        const card = document.createElement('div');
+        card.className = 'page-card';
+        card.style.animationDelay = (idx * 80) + 'ms';
+        card.innerHTML = `
+          <div class="page-card-label">// PAGE ${String(idx + 1).padStart(2,'0')}</div>
+          <div class="page-card-title">${escHtml(page.title)}</div>
+          <div class="page-card-desc">${escHtml(page.description || '// no description')}</div>
+          <div class="page-card-url">${escHtml(page.url)}</div>
+          <div class="page-card-footer">
+            ${page.updated ? `<span class="page-card-date">Updated ${page.updated}</span>` : '<span></span>'}
+            <a href="${escHtml(page.url)}" target="_blank" rel="noopener" class="page-visit-btn">Visit →</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    async function fetchPages() {
+      const grid   = document.getElementById('pagesGrid');
+      const status = document.getElementById('pagesStatus');
+
+      status.innerHTML = '<span class="pages-loading">// FETCHING REPOS...</span>';
+
+      // Always render hardcoded pages immediately
+      renderCards(HARDCODED_PAGES);
+
+      try {
+        const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`);
+        if (!res.ok) throw new Error('status ' + res.status);
+        const repos = await res.json();
+
+        // Build a set of hardcoded names to avoid duplicates
+        const hardcodedNames = new Set(HARDCODED_PAGES.map(p => p.name));
+
+        const apiPages = repos
+          .filter(r => !SKIP_REPOS.includes(r.name) && !r.fork && !hardcodedNames.has(r.name))
+          .map(r => ({
+            name: r.name,
+            title: formatName(r.name),
+            description: r.description || '// no description',
+            url: `https://${GITHUB_USER}.github.io/${r.name}/`,
+            updated: new Date(r.updated_at).toLocaleDateString('en-GB', { year:'numeric', month:'short' })
+          }));
+
+        status.innerHTML = '';
+        renderCards([...HARDCODED_PAGES, ...apiPages]);
+
+      } catch (err) {
+        // API failed — hardcoded pages already showing, just clear the loading text
+        status.innerHTML = '';
+      }
+    }
+
+    fetchPages();
+
+    // ── Timeline scroll animation ──
     const items = document.querySelectorAll('.tl-item');
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 100);
-        }
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
       });
     }, { threshold: 0.15 });
     items.forEach(el => obs.observe(el));
 
-    // Smooth active nav link highlighting
+    // ── Nav highlight ──
     const sections = document.querySelectorAll('section[id]');
     const links = document.querySelectorAll('.nav-links a');
     const navObs = new IntersectionObserver((entries) => {
