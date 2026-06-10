@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Fantasy Football — All Leagues</title>
+<title>Fantasy Football | Web Maker Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -511,7 +511,7 @@ body::before {
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <link rel="icon" type="image/svg+xml" href="https://web-maker-designer.github.io/favicon.svg"/>
+      <link rel="logo-icon" type="image/svg+xml" href="https://web-maker-designer.github.io/favicon.svg"/>
       <div class="logo-text">Fantasy<span>ALL LEAGUES</span></div>
     </div>
     <nav class="sidebar-nav">
@@ -525,7 +525,6 @@ body::before {
       <div class="nav-item" onclick="showPage('leagues',this)"><span class="icon">🌍</span> Leagues</div>
 
       <div class="nav-section">Live</div>
-      <div class="nav-item" onclick="showPage('scores',this)"><span class="icon">🔴</span> Live Scores</div>
       <div class="nav-item" onclick="showPage('players',this)"><span class="icon">⭐</span> Player Ratings</div>
     </nav>
     <div class="sidebar-user">
@@ -693,18 +692,14 @@ body::before {
           </div>
         </div>
       </div>
+      <div class="panel" style="margin-bottom:20px">
+        <div class="panel-head"><span class="panel-title">Public Leagues — Anyone Can Join</span></div>
+        <div id="publicLeaguesList"></div>
+      </div>
       <div class="panel">
         <div class="panel-head"><span class="panel-title">My Leagues</span></div>
         <div id="myLeaguesList"></div>
       </div>
-    </div>
-
-    <!-- LIVE SCORES -->
-    <div class="page" id="page-scores">
-      <div class="sec-title">Live Scores</div>
-      <div class="sec-sub">Real-time fixtures across all competitions</div>
-      <div class="league-tabs" id="scoresLeagueTabs"></div>
-      <div class="matches-grid" id="matchesGrid"></div>
     </div>
 
     <!-- PLAYER RATINGS -->
